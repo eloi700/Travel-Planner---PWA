@@ -1,0 +1,53 @@
+@import "reset";
+
+#nav-header {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  height: 7rem;
+  width: 100%;
+  top: 0;
+  background: $thi-color;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 0 0.1rem 0.5rem $corner-color;
+}
+
+.logo-img {
+  position: relative;
+  top: -7rem;
+  left: -4rem;
+  stroke: $pri-color;
+  stroke-width: 6;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
+}
+
+.p1 {
+  fill: none;
+  animation: fill 3s ease-in-out infinite;
+  top: 0;
+}
+
+.logo-name {
+  position: absolute;
+  font-family: "Road Rage", cursive;
+  font-size: 5rem;
+  color: $pri-color;
+  top: 0;
+  text-shadow: 0 0 0.3rem $sup-color;
+  padding: 1rem 1.5rem 0 8rem;
+  transition: 0.5s ease-in;
+
+  &:hover{
+    transform: rotate(-5deg);
+    text-decoration: underline $pri-color 0.8rem;
+    text-underline-offset: 0.2rem;
+  }
+}
+
+@keyframes fill {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

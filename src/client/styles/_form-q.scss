@@ -1,0 +1,287 @@
+@import "reset";
+
+.title-form {
+  position: absolute;
+  top: 9rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.3rem;
+  color: $sec-color;
+  z-index: 20;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.3rem;
+  line-height: 5rem;
+  text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.5);
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: linear-gradient(to top, $sec-color, $thi-color);
+    width: calc(115% + 4px);
+    height: 70%;
+    left: -1.8rem;
+    bottom: .8rem;
+    z-index: -1;
+    transform: rotate(-2deg);
+    box-shadow: 0 .2rem 1rem #000;
+  }
+}
+
+#search-form,
+#travel-info {
+  position: absolute;
+  @include center;
+  flex-direction: column;
+  height: 33rem;
+  width: 25rem;
+  left: 1.5rem;
+  top: 15rem;
+  background: $form-bg-color;
+  box-shadow: 0.2rem 0.2rem 1rem $sup-color;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 8rem;
+    width: 8rem;
+    bottom: 0;
+    left: 0;
+    border-width: 0.3rem;
+    border-style: solid;
+    border-color: transparent transparent $corner-color $corner-color;
+  }
+
+  &::after {
+    top: 0;
+    left: 17.2rem;
+    border-color: $corner-color $corner-color transparent transparent;
+  }
+}
+
+#travel-info {
+  visibility: hidden;
+  transform: perspective(100rem) scaleX(0);
+  transition: all 0.8s ease-in-out;
+  opacity: 0;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(100rem) scaleX(1);
+  }
+}
+
+#departure-date {
+  padding: 0 1rem 0 0;
+}
+#arrival-date {
+  padding: 0 0 0 0.5rem;
+}
+#city-place,
+#to-location{
+  text-transform: capitalize;
+}
+
+#trip-countdown-days{
+  padding-right: 0.5rem;
+}
+
+#weather-title {
+  color: $thi-color;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  padding: 0.5rem 1.8rem;
+  margin: 1rem 0;
+  word-spacing: 0.2rem;
+  letter-spacing: 0.2rem;
+  background: $corner-color;
+}
+
+.temp-info {
+  @include center;
+  justify-content: space-evenly;
+}
+
+.temp, .desc{
+  position: relative;
+  font-size: 1.3rem;
+  top: -1rem;
+}
+
+.temp{
+  letter-spacing: 0.2rem;
+}
+
+img.icon {
+ position: relative;
+ top: -1rem;
+ height: 5rem;
+ width: 5rem;
+
+ &::after{
+   border: 0;
+ }
+}
+
+#search-form.hide {
+  visibility: hidden;
+}
+
+.info {
+  padding: 0.5rem;
+  color: $pri-color;
+  font-size: 1.5rem;
+}
+
+.location-img-pixabay {
+  position: absolute;
+  top: .5rem;
+  bottom: 0;
+  left: 0;
+  height: 12rem;
+  width: 100%;
+}
+
+.loc-img {
+  width: 25rem;
+  height: 12rem;
+  transform: scale(0.9);
+  padding: .8rem;
+  top: 0;
+  border-radius: .5rem;
+  object-fit: cover;
+  border: 0.2rem solid $sec-color;
+  box-shadow: inset 0 0 0.8rem $pri-color;
+  transition: 0.5s ease-in-out;
+
+  &:hover {
+    margin: auto;
+    border: none;
+    transform: scale(0.95);
+  }
+
+  &::after{
+    border: 0;
+  }
+}
+
+#travel-text-details {
+  position: absolute;
+  top: 12rem;
+  text-align: center;
+}
+
+.txt-title, p{
+  font-size: 1.2rem;
+  padding: 0.4rem 0;
+  font-weight: 800;
+  line-height: 1rem;
+}
+
+.mark-style, p {
+  word-spacing: 0.3rem;
+  color: $sec-color;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.title-name {
+  color: $sec-color;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  padding: 1rem 0 1rem 0;
+}
+
+input::placeholder,
+input:focus {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  color: $pri-color;
+}
+
+label {
+  display: block;
+  padding-bottom: 1rem;
+  background: none;
+}
+
+input {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  height: 3rem;
+  width: 18rem;
+  border: none;
+  text-align: center;
+  background: none;
+  color: $pri-color;
+  border-bottom: 0.1rem solid $sec-color;
+
+  &.used:invalid {
+    border: 0.3rem solid red;
+    border-radius: 0.3rem;
+  }
+}
+
+.btn {
+  position: relative;
+  background: none;
+  border-radius: 2rem;
+  border: 0.1rem solid $sec-color;
+  cursor: pointer;
+  color: $pri-color;
+  margin-top: 2.2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  padding: 0.5rem 2rem;
+  text-transform: capitalize;
+  transition: 0.3s ease-in-out;
+
+  &:hover,
+  &:active {
+    background: linear-gradient($sec-color, $pri-color);
+    border: 0.1rem solid $sec-color;
+    border-radius: 2.5rem 2.5rem 0 0;
+    color: $thi-color;
+  }
+
+  &:active {
+    transform: scale(0.9);
+    animation: gradient 80ms;
+    background: $form-bg-color;
+    box-shadow: inset -0.5rem 0.5rem 1.5rem $pri-color;
+    color: $sec-color;
+    border: none;
+  }
+
+  &:hover::before {
+    visibility: hidden;
+  }
+}
+
+.save, .delete{
+  padding: 0.3rem 1.8rem;
+  font-size: 1.3rem;
+  margin: 0.3rem 1rem;
+}
+
+@keyframes gradient {
+  0% {
+    background: radial-gradient(circle at center, $pri-color 0%, #fff 0%, #fff 100%);
+  }
+  25% {
+    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.3) 24%, #fff 25%, #fff 100%);
+  }
+  50% {
+    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.3) 49%, #fff 50%, #fff 100%);
+  }
+  75% {
+    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.8) 74%, #fff 75%, #fff 100%);
+  }
+  100% {
+    color: #fff;
+    background: radial-gradient(circle at center, $pri-color 99%, #fff 100%, #fff 100%);
+  }
+}

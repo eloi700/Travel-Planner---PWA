@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PWA links -->
+    <meta name="theme-color" content="#00f9f9" />
+    <meta name="description" content="Travel Planner" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="My Travel Planner" />
+    <meta name="apple-mobile-web-app-title" content="Travel Planner" />
+    <meta name="msapplication-starturl" content="/index.html" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/icon.svg" />
+    <link rel="apple-touch-icon" href="/assets/icon192.png" />
+    <title>Travel & Weather App</title>
+
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Road+Rage&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Nav Header & Logo -->
+    <header id="nav-header">
+      <svg class="logo-img" viewBox="0 0 400 400" width="200" height="200">
+        <path
+          class="p1"
+          d="M 140 200 L 170 230 L 180 200 L 190 230 L 220 200 Q 210 160 180 160 Q 150 160 140 200 L 180 270 L 220 200"
+        ></path>
+      </svg>
+      <div class="logo-name">walkabout</div>
+    </header>
+
+    <!-- Trip Question Form -->
+    <main class="main-container">
+      <h1 class="title-form">Travel Planner</h1>
+      <form id="search-form">
+        <h3 class="title-name">City Destination</h3>
+        <div class="destination">
+          <label for="to-location" class="to-location"></label>
+          <input
+            type="text"
+            id="to-location"
+            placeholder="Where to?"
+            name="toLocation"
+            required
+            pattern="^[-a-zA-Z\s]{1,30}$"
+          />
+        </div>
+        <h3 class="title-name">Date of Travel</h3>
+        <div class="date">
+          <label for="start-date"></label>
+          <input
+            type="text"
+            id="start-date"
+            name="start-date"
+            placeholder="dd-mm-yyyy"
+            onfocus="(this.type='date')"
+            onblur="if(this.value=='')(this.type='text')"
+            required
+          />
+        </div>
+        <h3 class="title-name">Date of Return</h3>
+        <div class="date">
+          <label for="end-date"></label>
+          <input
+            type="text"
+            id="end-date"
+            name="end-date"
+            placeholder="dd-mm-yyyy"
+            onfocus="(this.type='date')"
+            onblur="if(this.value=='')(this.type='text')"
+            required
+          />
+        </div>
+        <button id="search" class="btn" type="submit">Search</button>
+      </form>
+
+      <!-- Trip Info / Details -->
+      <div id="travel-info" class="travel-info">
+        <!-- Location Image -->
+        <div class="location-img-pixabay">
+          <img class="loc-img" src="" />
+        </div>
+        <!-- Location, date, weather etc. details -->
+        <div id="travel-text-details">
+          <div class="info text-header">
+            <h3 class="txt-title trip-to">
+              <span class="mark-style" id="city-place"></span>
+            </h3>
+            <h3 class="txt-title datesOfTravel">
+              <span class="mark-style" id="departure-date">DD/MM/YYYY</span>to
+              <span class="mark-style" id="arrival-date">DD/MM/YYYY</span>
+            </h3>
+          </div>
+          <div class="info buttons">
+            <button class="save btn" type="button">save</button>
+            <button class="delete btn" type="button">delete</button>
+          </div>
+          <div class="trip-countdown">
+            <p>
+              Your trip is
+              <span class="mark-style" id="trip-countdown-days"></span>day/s
+              away.
+            </p>
+            <!-- <span>day/s away</span> -->
+          </div>
+          <div id="weather-forecast">
+            <h6 id="weather-title">Travel Weather Forecast</h6>
+            <div class="temp-info mark-style">
+              <span class="temp" id="temp"></span>
+              <img class="icon" id="temp-icon" src="" />
+              <span class="desc" id="temp-desc"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--Footer area-->
+    <footer id="info-footer">
+      <div class="social">
+        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+      </div>
+      <p class="designed">All rights reserved</p>
+      <p class="copyright">walkabout ©2022</p>
+    </footer>
+
+    <!-- Footer icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Service workers Using Load event to keep the page load performant -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  </body>
+</html>

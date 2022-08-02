@@ -1,0 +1,173 @@
+@import "reset", "header", "form-q", "footer";
+
+body {
+  @include center;
+  flex-direction: column;
+  background: $overlay-color;
+  background-image: url("https://source.unsplash.com/uAcg4PZ_f-o");
+  background-blend-mode: overlay;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50rem;
+  width: 28rem;
+  top: 0;
+  flex-direction: column;
+}
+
+// Responsive view on other screen devices
+
+// @media screen and (max-height: 600px){
+//   .main-container{
+//     height: 60rem;
+//     width: 25rem;
+//   }
+
+//   .logo-name {
+//     font-size: 4rem;
+//     top: 0.5rem;
+//   }
+
+//   // form-request
+//   .title-form {
+//     margin-bottom: 0.5rem;
+//     font-size: 1.5rem;
+//     top: 8.5rem;
+//     word-spacing: 0.3rem;
+//     line-height: 3rem;
+//   }
+
+//   #search-form,
+//   #travel-info {
+//     height: 25rem;
+//     width: 20rem;
+
+//     &::before,
+//     &::after {
+//       content: "";
+//       height: 2rem;
+//       width: 2rem;
+//       border-width: 0.3rem;
+//     }
+
+//     &::after{
+//       left: 21rem;
+//     }
+
+//     .title-name {
+//       font-size: 1.5rem;
+//       font-weight: 300;
+//       line-height: 1;
+//       padding: 0.3rem;
+//     }
+
+//     input::placeholder,
+//     input:focus {
+//       font-size: 1.3rem;
+//     }
+
+//     label {
+//       padding-bottom: 1rem;
+//     }
+
+//     input {
+//       font-size: 1.3rem;
+//       height: 3rem;
+//       width: 15rem;
+//     }
+
+//     .btn {
+//       border-radius: 0.5rem;
+//       margin-top: 1.5rem;
+//       font-size: 1.3rem;
+//       padding: 0.2rem 1.5rem;
+//     }
+
+//     // travel details / info
+//     .location-img-pixabay {
+//       top: 0.5rem;
+//       left: 0.2rem;
+//       height: 12rem;
+//     }
+
+//     .loc-img {
+//       width: 20rem;
+//       height: 12rem;
+//       padding: 0.8rem;
+//       border-radius: 0.5rem;
+//     }
+
+//     #travel-text-details {
+//       top: 12rem;
+//     }
+
+//     .txt-title, .mark-style{
+//       font-size: 1.2rem;
+//     }
+
+//     .save,
+//     .delete {
+//       padding: 0.3rem 1.8rem;
+//       font-size: 1.2rem;
+//       margin: -0.5rem 0.5rem;
+//     }
+
+//     #weather-title {
+//       font-size: 1rem;
+//       padding: 0.5rem 1.8rem;
+//       font-weight: 800;
+//     }
+
+//     .temp {
+//       letter-spacing: 0;
+//     }
+
+//     .temp,
+//     .desc {
+//       font-size: 1.2rem;
+//       top: -1rem;
+//     }
+
+//     img.icon {
+//       height: 3rem;
+//       width: 3rem;
+//     }
+//   }
+
+//   // footer area
+//   #info-footer {
+//     height: 8rem;
+//   }
+
+//   .social {
+//     position: relative;
+//     text-align: center;
+//     padding: 1.5rem 0 0 0;
+
+//     & > a {
+//       font-size: 2rem;
+//       width: 3rem;
+//       height: 3rem;
+//     }
+//   }
+
+//   ion-icon {
+//     pointer-events: none;
+//     color: $sec-color;
+//   }
+
+//   .designed, .copyright {
+//     padding: 0.5rem 0 0 0;
+//     font-size: 1rem;
+//     line-height: 0.8rem;
+//     font-weight: 300;
+//   }
+// }
